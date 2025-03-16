@@ -1,7 +1,7 @@
 local saveDataManager = sdk.get_managed_singleton("app.SaveDataManager")
 local cUserSaveParam = saveDataManager:call("getCurrentUserSaveData")
 local lastError = nil
-local config = require("AutoFill.config")
+local config = require("PouchAutoFiller.config")
 
 if not cUserSaveParam then
     lastError = "存档数据未初始化"
