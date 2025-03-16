@@ -14,8 +14,8 @@ local function autoFillCurrentPouch()
 end
 
 local function validateMySet(index)
-    local gameIndex = index - 1     
-    local ItemMySetUtil = sdk.find_type_define("app.ItemMySetUtil")
+    local gameIndex = index - 1 
+    local ItemMySetUtil = sdk.find_type_definition("app.ItemMySetUtil")
     if not ItemMySetUtil then
         lastError = "预设未找到"
         return false
@@ -24,7 +24,7 @@ local function validateMySet(index)
     if isValidMethod then
         local isValidData = isValidMethod:call(nil, sdk.to_ptr(gameIndex))
         if not isValidData then
-            lastError = "预设 "..index.." 不存在"  
+            lastError = "预设 "..index.." 不存在"
             return false
         end
         return true
@@ -34,7 +34,7 @@ end
 
 local function autoFill()  
     if validateMySet(config.mySetIndex) then
-        local ItemMySetUtil = sdk.find_type_define("app.ItemMySetUtil") 
+        local ItemMySetUtil = sdk.find_type_definition("app.ItemMySetUtil") 
         local applyMySetToPouch = ItemMySetUtil:get_method("applyMySetToPouch(System.Int32)")
         applyMySetToPouch:call(nil, sdk.to_ptr(config.mySetIndex - 1))
     else
