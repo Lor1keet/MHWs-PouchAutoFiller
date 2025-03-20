@@ -12,7 +12,7 @@
 ## 安装
 * 安装 [REFramework](https://github.com/praydog/REFramework) 前置。
 
-* REFramework 前置安装后，将文件解压至游戏根目录下的 REFramework/autorun 文件夹下即可。
+* 将 reframework 文件夹放在游戏根目录。
 
 ## 相关
 进入游戏，在菜单最下方找到脚本设置界面，拖动下方滑动条即可选择每次调用的个人组合序号，需要在帐篷中确认保存有个人组合。
